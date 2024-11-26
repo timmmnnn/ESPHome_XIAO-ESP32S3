@@ -22,10 +22,11 @@ void I2SAudioMediaPlayer::control(const media_player::MediaPlayerCall &call) {
       this->start();
     }
   }
-  if (call.get_volume().has_value()) {
-    this->volume = call.get_volume().value();
-    this->set_volume_(volume);
-    this->unmute_();
+ // if (call.get_volume().has_value()) {
+ //   this->volume = call.get_volume().value();
+ //   this->set_volume_(volume);
+ //   this->unmute_();
+    this->set_volume_(10);
   }
   if (this->i2s_state_ != I2S_STATE_RUNNING) {
     return;
